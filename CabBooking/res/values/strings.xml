@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CabBooking</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_emergancy_contacts">EmergancyContacts</string>
+    <string name="title_activity_about_us">AboutUs</string>
+    <string name="title_activity_order">Order</string>
+    <string name="title_activity_rate_card">RateCard</string>
+
+    
+    <string-array name="navigation_drawer_items_array">
+        <item>Home</item>
+        <item>Books</item>
+        <item>Bookmarks</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string name="title_activity_registration">Registration</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_profile">Profile</string>
+    
+    <!--  Registration Strings -->
+    <string name="edtFirstName">First Name</string>
+    <string name="edtLastName">Last Name</string>
+    <string name="edtMobileNo">Mobile No</string>
+    <string name="edtEmailId">Email Id</string>
+    <string name="btnRegister">Register</string>
+
+    <!--  Login Strings -->
+    <string name="btnLogin">Login</string>
+    <string name="edtUserName">Email Id</string>
+    <string name="edtPassword">Password</string>
+</resources>

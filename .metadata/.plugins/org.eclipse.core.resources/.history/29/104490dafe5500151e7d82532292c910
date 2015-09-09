@@ -1,0 +1,7 @@
+package com.developermaniax.cabbooking.utils;
+
+public class Constants {
+
+	protected static String RegURL = "";
+	
+}

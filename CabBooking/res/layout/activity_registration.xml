@@ -1,0 +1,162 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.developermaniax.cabbooking.Registration" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/top" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/logooutline" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginTop="15dp"
+        android:background="#45A9D3" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/edtFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/customtextbox"
+                android:drawableLeft="@drawable/user"
+                android:gravity="right"
+                android:hint="@string/edtFirstName"
+                android:inputType="textPersonName"
+                android:padding="7dip"
+                android:paddingRight="5dip" >
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/edtLastName"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@id/edtFirstName"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/customtextbox"
+                android:drawableLeft="@drawable/user"
+                android:gravity="right"
+                android:hint="@string/edtLastName"
+                android:inputType="textPersonName"
+                android:padding="7dip"
+                android:paddingRight="5dip" />
+
+            <EditText
+                android:id="@+id/edtEmailId"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@id/edtLastName"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/customtextbox"
+                android:drawableLeft="@drawable/envelope"
+                android:gravity="right"
+                android:hint="@string/edtEmailId"
+                android:inputType="textEmailAddress"
+                android:padding="7dip"
+                android:paddingRight="5dip" />
+
+            <EditText
+                android:id="@+id/edtMobileNo"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@id/edtEmailId"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/customtextbox"
+                android:drawableLeft="@drawable/mobile"
+                android:gravity="right"
+                android:hint="@string/edtMobileNo"
+                android:inputType="number"
+                android:padding="7dip"
+                android:paddingRight="5dip" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+               android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@id/edtMobileNo"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/customtextbox"
+                android:drawableLeft="@drawable/mobile"
+                android:gravity="right"
+                android:hint="@string/edtMobileNo"
+                android:padding="7dip"
+                android:paddingRight="5dip"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edtPassword"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custombutton"
+                android:text="@string/btnRegister" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/ic_launcher512" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="Welcome To\n Cab Booking Service"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>
