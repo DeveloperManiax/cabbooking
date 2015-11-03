@@ -14,5 +14,6 @@
 	<color name="englishred">#E55350</color>
 	<color name="list_background">#E6E6E6</color>
 	<color name="list_background_pressed">#E25B68</color>
+	<color name="actionbar_background">#FFD33D</color>
 	<!--#3385C7 #E25B68 -->
 </resources>

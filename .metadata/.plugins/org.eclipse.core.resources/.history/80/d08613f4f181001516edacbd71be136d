@@ -1,0 +1,191 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:background="#FFD33D"
+    android:clickable="true"
+    tools:context="com.developermaniax.cabbooking.Order" >
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="245dp" >
+
+        <fragment
+            android:id="@+id/googleMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|center_horizontal"
+            class="com.google.android.gms.maps.SupportMapFragment" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/location32" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="bottom"
+        android:gravity="bottom" >
+
+        <TextView
+            android:id="@+id/latlongLocation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/radioGroup1"
+            android:background="#ff058fff"
+            android:gravity="bottom|left"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:textColor="#ffffffff" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linneer"
+            android:background="#ffffff"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <RadioButton
+                android:id="@+id/rdoCar"
+                android:layout_width="165dp"
+                android:layout_height="40dp"
+                android:checked="true"
+                android:drawableLeft="@drawable/car48"
+                android:gravity="right|center_vertical"
+                android:padding="3dp"
+                android:text="Car" />
+
+            <RadioButton
+                android:id="@+id/rdoVan"
+                android:layout_width="165dp"
+                android:layout_height="40dp"
+                android:drawableLeft="@drawable/van48"
+                android:gravity="right|center_vertical"
+                android:padding="3dp"
+                android:text="VAN" />
+
+            <RadioButton
+                android:id="@+id/rdoMiniBus"
+                android:layout_width="165dp"
+                android:layout_height="40dp"
+                android:drawableLeft="@drawable/minibus32"
+                android:gravity="right|center_vertical"
+                android:padding="3dp"
+                android:text="Mini Bus" />
+
+            <RadioButton
+                android:id="@+id/rdoBus"
+                android:layout_width="165dp"
+                android:layout_height="40dp"
+                android:drawableLeft="@drawable/minibus48"
+                android:gravity="right|center_vertical"
+                android:padding="3dp"
+                android:text="Bus" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/linneer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="#FFD33D"
+            android:padding="5dp" >
+
+            <Button
+                android:id="@+id/btnRideNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="0.73"
+                android:background="@drawable/custombutton"
+                android:text="@string/btnRideNow" />
+
+            <Button
+                android:id="@+id/btnRideLater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.73"
+                android:background="@drawable/custombutton"
+                android:text="@string/btnRideLater" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linneer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/radioGroup1"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/latlongLocation"
+            android:layout_toRightOf="@+id/radioGroup1"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/radioGroup1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/radioGroup1"
+                android:paddingLeft="5dp"
+                android:text="Total KM "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView1"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView1"
+                android:gravity="center"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView2"
+                android:layout_marginTop="21dp"
+                android:layout_marginLeft="5dp"
+                android:paddingLeft="5dp"
+                android:text="Total Amount"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView3"
+                android:layout_toRightOf="@+id/radioGroup1"
+                android:gravity="center"
+                android:text="TextView" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

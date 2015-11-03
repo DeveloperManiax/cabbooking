@@ -1,11 +1,10 @@
 package com.developermaniax.cabbooking;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.MenuItem;
@@ -14,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 @SuppressWarnings("deprecation")
-public class Home extends Activity {
+public class Home extends FragmentActivity {
 
 	private String[] mNavigationDrawerItemTitles;
 	private DrawerLayout mDrawerLayout;
@@ -26,6 +25,8 @@ public class Home extends Activity {
 
 	private CharSequence mTitle;
 
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -40,12 +41,22 @@ public class Home extends Activity {
 
 		// <---------------------------------------------------------------->
 
-		ObjectDrawerItem[] drawerItem = new ObjectDrawerItem[4];
+		ObjectDrawerItem[] drawerItem = new ObjectDrawerItem[7];
 
-		drawerItem[0] = new ObjectDrawerItem(R.drawable.home48, "Home");
-		drawerItem[1] = new ObjectDrawerItem(R.drawable.book48, "Books");
-		drawerItem[2] = new ObjectDrawerItem(R.drawable.pin48, "Bookmarks");
-		drawerItem[3] = new ObjectDrawerItem(R.drawable.wrench48, "Settings");
+		/*
+		 * <item>Home</item> <item>Order History</item> <item>Rate Card</item>
+		 * <item>Available Cities</item> <item>Emergancy Contacts</item>
+		 * <item>About Us</item>
+		 */
+		drawerItem[0] = new ObjectDrawerItem(R.drawable.user, "Home");
+		drawerItem[1] = new ObjectDrawerItem(R.drawable.home32, "Order");
+		drawerItem[2] = new ObjectDrawerItem(R.drawable.book32, "Order History");
+		drawerItem[3] = new ObjectDrawerItem(R.drawable.rs32, "Rate Card");
+		drawerItem[4] = new ObjectDrawerItem(R.drawable.location32,
+				"Available Cities");
+		drawerItem[5] = new ObjectDrawerItem(R.drawable.phone32,
+				"Emergancy Contacts");
+		drawerItem[6] = new ObjectDrawerItem(R.drawable.help32, "About Us");
 		// <---------------------------------------------------------------->
 
 		DrawerItemCustomAdapter adapter = new DrawerItemCustomAdapter(this,
@@ -85,7 +96,7 @@ public class Home extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
 
-		selectItem(0);
+		selectItem(1);
 	}
 
 	private class DrawerItemClickListener implements
@@ -102,29 +113,41 @@ public class Home extends Activity {
 	void selectItem(int position) {
 
 		Fragment fragment = null;
+		Log.e("selectedposition", "" + position);
 
 		switch (position) {
 
 		case 0:
-			fragment = new Order();
+			fragment = new Profile();
 			break;
 		case 1:
-			fragment = new EmergancyContacts();
+			fragment = new BookingSelection();
 			break;
 		case 2:
-			fragment = new AboutUs();
+			fragment = new OrderHistory();
 			break;
 		case 3:
 			fragment = new RateCard();
 			break;
+		case 4:
+			fragment = new AvailableCities();
+			break;
+		case 5:
+			fragment = new EmergancyContacts();
+			break;
+		case 6:
+			fragment = new AboutUs();
+			break;			
 		default:
 			break;
 		}
 
 		if (fragment != null) {
-			FragmentManager fragmentManager = getFragmentManager();
-			fragmentManager.beginTransaction()
-					.replace(R.id.content_frame, fragment).commit();
+
+			android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+			android.support.v4.app.FragmentTransaction transaction = fragmentManager
+					.beginTransaction();
+			transaction.replace(R.id.content_frame, fragment).commit();
 			mDrawerList.setItemChecked(position, true);
 			mDrawerList.setSelection(position);
 			getActionBar().setTitle(mNavigationDrawerItemTitles[position]);

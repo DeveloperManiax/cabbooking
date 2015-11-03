@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.developermaniax.cabbooking.Login" 
-    android:background="#ffffff">
+    android:background="#ffffff"
+    tools:context="com.developermaniax.cabbooking.Login" >
 
     <ImageView
         android:id="@+id/imageView1"
@@ -36,7 +36,7 @@
         android:src="@drawable/ic_launcher512" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/txtCityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -47,59 +47,76 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#ffffff" />
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="20dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/imageView2"
-        android:layout_marginTop="20dp"
-        android:background="#45A9D3"
-        android:orientation="vertical"
-        android:padding="5dp" >
+        android:layout_marginTop="15dp"
+        android:background="#FFD33D" >
 
-        <EditText
-            android:id="@+id/edtUserName"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/customtextbox"
-            android:drawableLeft="@drawable/user"
-            android:ems="10"
-            android:gravity="right"
-            android:hint="@string/edtUserName"
-            android:padding="5dp" />
-
-        <EditText
-            android:id="@+id/edtPassword"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@id/edtUserName"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/customtextbox"
-            android:drawableLeft="@drawable/passwordb"
-            android:ems="10"
-            android:gravity="right"
-            android:hint="@string/edtPassword"
-            android:inputType="textPassword"
-            android:padding="5dp"
-            />
-
-        <Button
-            android:id="@+id/button1"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editText2"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/custombutton"
-            android:text="@string/btnLogin" />
-    </LinearLayout>
+            android:layout_marginTop="0dp"
+            android:background="#FFD33D"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <EditText
+                android:id="@+id/edtUserName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/customtextbox"
+                android:drawableLeft="@drawable/user22"
+                android:ems="10"
+                android:gravity="right"
+                android:hint="@string/edtUserName"
+                android:inputType="textEmailAddress"
+                android:padding="5dp" />
+
+            <EditText
+                android:id="@+id/edtLPassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/customtextbox"
+                android:drawableLeft="@drawable/secure22"
+                android:ems="10"
+                android:gravity="right"
+                android:hint="@string/edtPassword"
+                android:inputType="textPassword"
+                android:padding="5dp" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/custombutton"
+                android:text="@string/btnLogin" />
+
+            <TextView
+                android:id="@+id/txtSignUP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:gravity="right"
+                android:text="SignUp Here!"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

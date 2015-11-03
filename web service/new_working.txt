@@ -1,0 +1,28 @@
+getState
+	http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=getstate
+getCity
+	http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=getcity&sid=1
+getPlace
+	http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=getplace&cid=4
+
+vehical_type
+	http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=vehical_type
+intercity
+	set
+		http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=setintercity
+		response
+			"uid" => $data['uid'],
+    			"from_latitude" => $data['from_latitude'],
+    			"from_longitude" => $data['from_longitude'],
+    			"to_latitude" => $data['to_latitude'],
+    			"to_longitude" => $data['to_longitude'],
+  			"name_of_client" => $data['name_of_client'],
+ 			"mobile_no" => $data['mobile_no'],
+  			"from_address" => $data['from_address'],
+ 			"to_address" => $data['to_address'],
+  			"price" => $data['price']
+			"vehical_type" => index or id
+	get
+		http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=getintercity
+		response
+			"uid" => $data['uid']

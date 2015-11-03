@@ -8,6 +8,11 @@
         android:minSdkVersion="17"
         android:targetSdkVersion="17" />
 
+    <permission
+        android:name="com.developermaniax.cabbooking.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.developermaniax.cabbooking.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
@@ -15,11 +20,15 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo.Light" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -69,6 +78,30 @@
         <activity
             android:name=".Profile"
             android:label="@string/title_activity_profile" >
+        </activity>
+        <activity
+            android:name=".NightRate"
+            android:label="@string/title_activity_night_rate" >
+        </activity>
+        <activity
+            android:name=".DayRate"
+            android:label="@string/title_activity_day_rate" >
+        </activity>
+        <activity
+            android:name=".AvailableCities"
+            android:label="@string/title_activity_available_cities" >
+        </activity>
+        <activity
+            android:name=".OrderHistory"
+            android:label="@string/title_activity_order_history" >
+        </activity>
+        <activity
+            android:name=".BookingSelection"
+            android:label="@string/title_activity_booking_selection" >
+        </activity>
+        <activity
+            android:name=".IntracityOrderConfirmation"
+            android:label="@string/title_activity_intracity_order_confirmation" >
         </activity>
     </application>
 

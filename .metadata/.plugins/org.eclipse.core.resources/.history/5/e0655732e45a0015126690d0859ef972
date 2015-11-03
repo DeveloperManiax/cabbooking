@@ -1,0 +1,8 @@
+package com.developermaniax.cabbooking;
+
+import android.support.v4.app.Fragment;
+
+public class NightRate extends Fragment {
+
+	
+}

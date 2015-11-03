@@ -1,0 +1,179 @@
+package com.developermaniax.cabbooking;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+@SuppressWarnings("deprecation")
+public class Home extends FragmentActivity {
+
+	private String[] mNavigationDrawerItemTitles;
+	private DrawerLayout mDrawerLayout;
+	private ListView mDrawerList;
+
+	ActionBarDrawerToggle mDrawerToggle;
+
+	private CharSequence mDrawerTitle;
+
+	private CharSequence mTitle;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_home);
+		mTitle = mDrawerTitle = getTitle();
+
+		// <---------------------------------------------------------------->
+		mNavigationDrawerItemTitles = getResources().getStringArray(
+				R.array.navigation_drawer_items_array);
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+		// <---------------------------------------------------------------->
+
+		ObjectDrawerItem[] drawerItem = new ObjectDrawerItem[7];
+
+		/*
+		 * <item>Home</item> <item>Order History</item> <item>Rate Card</item>
+		 * <item>Available Cities</item> <item>Emergancy Contacts</item>
+		 * <item>About Us</item>
+		 */
+		drawerItem[0] = new ObjectDrawerItem(R.drawable.user, "Home");
+		drawerItem[1] = new ObjectDrawerItem(R.drawable.home32, "Order");
+		drawerItem[2] = new ObjectDrawerItem(R.drawable.book32, "Order History");
+		drawerItem[3] = new ObjectDrawerItem(R.drawable.rs32, "Rate Card");
+		drawerItem[4] = new ObjectDrawerItem(R.drawable.location32,
+				"Available Cities");
+		drawerItem[5] = new ObjectDrawerItem(R.drawable.phone32,
+				"Emergancy Contacts");
+		drawerItem[6] = new ObjectDrawerItem(R.drawable.help32, "About Us");
+		// <---------------------------------------------------------------->
+
+		DrawerItemCustomAdapter adapter = new DrawerItemCustomAdapter(this,
+				R.layout.listview_item_row, drawerItem);
+		// mDrawerList.setSelector(R.drawable.list_selector);
+		// <---------------------------------------------------------------->
+
+		mDrawerList.setAdapter(adapter);
+
+		// <---------------------------------------------------------------->
+
+		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+		// <---------------------------------------------------------------->
+
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+				R.drawable.ic_drawer, R.string.app_name, R.string.app_name) {
+
+			/** Called when a drawer has settled in a completely closed state. */
+			@SuppressLint("NewApi")
+			public void onDrawerClosed(View view) {
+				super.onDrawerClosed(view);
+				getActionBar().setTitle(mTitle);
+			}
+
+			/** Called when a drawer has settled in a completely open state. */
+			@SuppressLint("NewApi")
+			public void onDrawerOpened(View drawerView) {
+				super.onDrawerOpened(drawerView);
+				getActionBar().setTitle(mDrawerTitle);
+			}
+		};
+
+		mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setHomeButtonEnabled(true);
+
+		selectItem(1);
+	}
+
+	private class DrawerItemClickListener implements
+			ListView.OnItemClickListener {
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			selectItem(position);
+		}
+
+	}
+
+	void selectItem(int position) {
+
+		Fragment fragment = null;
+
+		
+		switch (position) {
+
+		case 0:
+			fragment = new Profile();
+			break;
+		case 1:
+			fragment = new Order();
+			break;
+		case 2:
+			fragment = new OrderHistory();
+			break;
+		case 3:
+			fragment = new RateCard();
+			break;
+		case 4:
+			fragment = new AvailableCities();
+			break;
+		case 5:
+			fragment = new EmergancyContacts();
+			break;
+		case 6:
+			fragment = new AboutUs();
+			break;
+		default:
+			break;
+		}
+
+		if (fragment != null) {
+
+			android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+			android.support.v4.app.FragmentTransaction transaction = fragmentManager
+					.beginTransaction();
+			transaction.replace(R.id.content_frame, fragment).commit();
+			mDrawerList.setItemChecked(position, true);
+			mDrawerList.setSelection(position);
+			getActionBar().setTitle(mNavigationDrawerItemTitles[position]);
+			mDrawerLayout.closeDrawer(mDrawerList);
+		} else {
+			Log.e("MainActivity", "Error in creating fragment");
+		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		if (mDrawerToggle.onOptionsItemSelected(item)) {
+			return true;
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void setTitle(CharSequence title) {
+		mTitle = title;
+		getActionBar().setTitle(mTitle);
+	}
+
+	@Override
+	protected void onPostCreate(Bundle savedInstanceState) {
+		super.onPostCreate(savedInstanceState);
+		mDrawerToggle.syncState();
+	}
+}

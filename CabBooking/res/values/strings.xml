@@ -10,27 +10,58 @@
     <string name="title_activity_order">Order</string>
     <string name="title_activity_rate_card">RateCard</string>
 
-    
     <string-array name="navigation_drawer_items_array">
         <item>Home</item>
-        <item>Books</item>
-        <item>Bookmarks</item>
-        <item>Settings</item>
+        <item>Order</item>
+        <item>Order History</item>
+        <item>Rate Card</item>
+        <item>Available Cities</item>
+        <item>Emergancy Contacts</item>
+        <item>About Us</item>
     </string-array>
 
     <string name="title_activity_registration">Registration</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_profile">Profile</string>
-    
-    <!--  Registration Strings -->
+
+    <!-- Registration Strings -->
     <string name="edtFirstName">First Name</string>
     <string name="edtLastName">Last Name</string>
     <string name="edtMobileNo">Mobile No</string>
     <string name="edtEmailId">Email Id</string>
     <string name="btnRegister">Register</string>
 
-    <!--  Login Strings -->
+    <!-- Login Strings -->
     <string name="btnLogin">Login</string>
     <string name="edtUserName">Email Id</string>
     <string name="edtPassword">Password</string>
+
+    <!-- Order -->
+    <string name="btnRideLater">Ride Later</string>
+    <string name="btnRideNow">Ride Now</string>
+
+    <!-- shared prefs -->
+    <string name="pref_key">cab987654</string>
+    <string name="pref_registred">Registered</string>
+    <string name="pref_login">Login</string>
+    <string name="pref_user">User</string>
+    <string name="pref_pass">Password</string>
+    <string name="pref_isLogin">isLogin</string>
+
+    <!-- Alert messages -->
+    <string name="alertmsg_JSONExceptionMessage">Web server crashed!\nPlease restart the application</string>
+    <string name="alertmsg_ApplicationFailedMessage">Unfortunetly Application Failed!\nPlease contact the administrator</string>
+    <string name="alertmsg_ProcessingMessage">Please wait while processing&#8230;</string>
+    <string name="alertmsg_LoadingdataMessage">Please wait while loading data&#8230;</string>
+    <string name="alertmsg_AuthenticationInProgressMessage">keep calm\nauthentication in progress&#8230;</string>
+    <string name="title_activity_night_rate">NightRate</string>
+    <string name="title_activity_day_rate">DayRate</string>
+    <string name="title_activity_available_cities">AvailableCities</string>
+    <string name="title_activity_order_history">OrderHistory</string>
+    <string name="aboutsInfo">Developer Maniax</string>
+    <string name="aboutusAddress">36,Omega Complex,Opp.Dharti Automobiles,Gondal Road,Rajkot</string>
+    <string name="poweredBy">Powered By</string>
+    <string name="title_activity_booking_selection">BookingSelection</string>
+    <string name="title_activity_intracity_order_confirmation">IntracityOrderConfirmation</string>
+
 </resources>

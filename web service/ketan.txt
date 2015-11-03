@@ -1,0 +1,95 @@
+passing parameter for placing order of intercity
+http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=setintercity
+"uid"
+"from_latitude"
+"from_longitude"
+"to_latitude"
+"to_longitude"
+"pick_up_date"
+"price" 
+
+
+
+{
+	"intracity":
+			["night":[{"RAJKOT","12.50"},{"Ahmedabad","12.50"}],"day":[{"RAJKOT","15.30"},{"Ahmedabad","12.50"}]],
+	"citysightseeing":
+			["night":[{"RAJKOT","11.30"},{"Ahmedabad","12.50"}],"day":[{"RAJKOT","12.50"},{"RAJKOT","12.50"}]],
+	"carhireondisposal":
+			[{"night":[{"RAJKOT","5.00"}],"day":[{"RAJKOT","6.00"}]}]
+}
+
+bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=price_intracity
+
+consider type(
+	1 : intercity
+	2 : citysightseeing
+	3 : carhireondisposal
+)
+
+@12309876543210@developermaniax
+
+Price
+	price
+		http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=price
+
+		
+	{ "intracity":
+	      {
+		    "day":[
+			        {"cname":"Ahmedabad","price":"50"},
+					{"cname":"Surat","price":"20"},
+					{"cname":"Rajkot","price":"50"}
+				  ],
+			"night":[
+			         {"cname":"Ahmedabad","price":"100"}
+					 ]
+		   },
+	   "citysightseeing":
+	       {
+		     "day":[
+					 {"cname":"Ahmedabad","price":"500"},
+					 {"cname":"Surat","price":"400"}
+					],
+			 "night":[
+					  {"cname":"Ahmedabad","price":"700"}
+					 ]
+		   },
+	    "carhireondisposal":
+		    {
+			  "day":[
+			          {"cname":"Ahmedabad","price":"1200"}
+					],
+			  "night":[
+					  {"cname":"Ahmedabad","price":"1250"},
+					  {"cname":"Surat","price":"1000"}
+					  ]
+			}
+	}
+						
+getState
+	http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=getstate
+getCity
+	http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=getcity&sid=1
+
+	
+	    Business
+    Organizations
+    eCommerce Websites.
+    Security Applications.
+    Products.
+    Games.
+    Restaurants.
+    Educations. etc.,
+
+Also we develops application as per client requirements.let us know we can satisfy your requirements. we have the 2 years of experience in android application development. also we develops mobile application in windows mobile,iPhone and android TV.
+
+NOTE : please contact us before placing the order so we can understand what you need and we will fulfill your requirements. Otherwise we your order will be late and i am not responsible for this due to that reason i am already get one negative review please take care about it.
+
+Thank you.
+	
+	
+	
+	
+	Bhargav Pandya
+9727799081

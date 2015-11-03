@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.developermaniax.cabbooking.AvailableCities" >
+
+    <Spinner
+        android:id="@+id/spState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ListView
+        android:id="@+id/lstAvailableCities"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/spState"
+        android:background="#FFD33D"
+        android:choiceMode="singleChoice"
+        android:divider="#ffffff"
+        android:dividerHeight="2dp"
+        android:paddingBottom="5dp" >
+    </ListView>
+
+</RelativeLayout>

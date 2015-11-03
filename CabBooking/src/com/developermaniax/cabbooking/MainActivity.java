@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				try {
 					Thread.sleep(3000);
-					Intent intent = new Intent(MainActivity.this, Registration.class);
+					Intent intent = new Intent(MainActivity.this, Home.class);
 					startActivity(intent);
 					finish();
 				} catch (InterruptedException e) {

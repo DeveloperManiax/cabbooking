@@ -1,34 +1,78 @@
 package com.developermaniax.cabbooking;
 
-import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
-public class Profile extends Activity {
+import com.developermaniax.cabbooking.models.LoginData;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_profile);
-	}
+public class Profile extends Fragment {
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.profile, menu);
-		return true;
-	}
+	TextView txtUserName;
+	TextView txtContactNo;
+	TextView txtCityName;
+	TextView txtEmailId;
+	TextView txtAddress;
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.activity_profile, container,
+				false);
+		txtUserName = (TextView) view.findViewById(R.id.txtUserName);
+		txtContactNo = (TextView) view.findViewById(R.id.txtMobileNo);
+		txtCityName = (TextView) view.findViewById(R.id.txtCityName);
+		txtEmailId = (TextView) view.findViewById(R.id.txtEmailId);
+		txtAddress = (TextView) view.findViewById(R.id.txtAddress);
+
+		try {
+
+			txtUserName.setText(LoginData.getfName() + " "
+					+ LoginData.getlName());
+			txtContactNo.setText(LoginData.getMobileNo());
+			txtCityName.setText(LoginData.getCityId());
+			txtEmailId.setText(LoginData.getEmailId());
+			txtAddress.setText(LoginData.getAddress());
+
+		} catch (NullPointerException e) {
+			AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+					getActivity());
+			alertDialog.setMessage("No Data Found");
+			alertDialog.setCancelable(false);
+			alertDialog.setPositiveButton("Ok",
+					new DialogInterface.OnClickListener() {
+
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							// TODO Auto-generated method stub
+
+						}
+					});
+			alertDialog.show();
 		}
-		return super.onOptionsItemSelected(item);
+
+		return view;
 	}
+
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		// TODO Auto-generated method stub
+		super.onCreateOptionsMenu(menu, inflater);
+	}
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		return super.onContextItemSelected(item);
+	}
+
 }

@@ -1,0 +1,26 @@
+//Rate Card Web Service 
+//passing rajkot city id
+{
+		"intracity":
+				[
+				"night":[{"RAJKOT","12.50"},{"Ahmedabad","12.50"}],
+				"day":[{"RAJKOT","15.30"},{"Ahmedabad","12.50"}]],
+		"citysightseeing":
+				["night":[{"RAJKOT","11.30"},{"Ahmedabad","12.50"}],"day":[{"RAJKOT","12.50"},{"RAJKOT","12.50"}]],
+		"carhireondisposal":
+				[{"night":[{"RAJKOT","5.00"}],"day":[{"RAJKOT","6.00"}]}]
+}
+
+
+
+
+Price
+ intercity
+  http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=price_intracity
+  http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=price_intracity&cid=1
+ citysightseeing
+  http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=price_citysightseeing&cid=1
+  http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=price_citysightseeing
+ carhireondisposal 
+  http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=price_carhireondisposal
+  http://bus.srooh.com/index.php?accesskey=ANDBUSAPK30014PK&action=price_carhireondisposal&cid=1
